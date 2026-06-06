@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  ChevronRight, 
-  ExternalLink, 
-  Briefcase, 
-  GraduationCap, 
-  Award, 
-  Menu, 
+import {
+  Mail,
+  Phone,
+  MapPin,
+  ChevronRight,
+  ExternalLink,
+  Briefcase,
+  GraduationCap,
+  Award,
+  Menu,
   X,
   Heart
 } from 'lucide-react';
@@ -173,6 +173,9 @@ export default function App() {
   if (!mounted) return null;
 
   return (
+    <div className='w-full h-screen relative'>
+
+    
     <div className="bg-[#0b0f19] text-slate-200 min-h-screen font-sans overflow-x-hidden">
       {/* Background Gradients */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
@@ -185,7 +188,7 @@ export default function App() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0b0f19]/80 backdrop-blur-md border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               className="flex items-center space-x-2"
@@ -204,14 +207,13 @@ export default function App() {
                 <button
                   key={item}
                   onClick={() => scrollTo(item)}
-                  className={`capitalize text-sm font-medium transition-colors hover:text-white ${
-                    activeSection === item ? 'text-blue-400' : 'text-slate-400'
-                  }`}
+                  className={`capitalize text-sm font-medium transition-colors hover:text-white ${activeSection === item ? 'text-blue-400' : 'text-slate-400'
+                    }`}
                 >
                   {item}
                 </button>
               ))}
-              <a 
+              <a
                 href="mailto:abhijithpratheesh3014@gmail.com"
                 className="px-4 py-2 bg-gradient-to-r from-blue-500 to-teal-400 hover:from-blue-600 hover:to-teal-500 text-white text-sm font-medium rounded-lg transition-all shadow-lg shadow-blue-500/25"
               >
@@ -231,7 +233,7 @@ export default function App() {
         {/* Mobile menu */}
         <AnimatePresence>
           {isMenuOpen && (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
@@ -242,14 +244,13 @@ export default function App() {
                   <button
                     key={item}
                     onClick={() => scrollTo(item)}
-                    className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium capitalize ${
-                      activeSection === item ? 'bg-blue-600/20 text-blue-400' : 'text-slate-300 hover:bg-white/5'
-                    }`}
+                    className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium capitalize ${activeSection === item ? 'bg-blue-600/20 text-blue-400' : 'text-slate-300 hover:bg-white/5'
+                      }`}
                   >
                     {item}
                   </button>
                 ))}
-                <a 
+                <a
                   href="mailto:abhijithpratheesh3014@gmail.com"
                   className="block w-full text-center mt-4 px-4 py-2 bg-gradient-to-r from-blue-500 to-teal-400 text-white rounded-md"
                 >
@@ -265,7 +266,7 @@ export default function App() {
         {/* Hero Section */}
         <section id="home" className="min-h-[calc(100vh-4rem)] flex flex-col justify-center relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -287,16 +288,16 @@ export default function App() {
               <p className="text-slate-400 text-lg max-w-2xl leading-relaxed">
                 Turning complex problems into elegant, real-world solutions. B.Tech Computer Science student with a focus on Frontend Engineering, Python, and AI integration.
               </p>
-              
+
               <div className="flex flex-wrap gap-4 pt-4">
-                <button 
+                <button
                   onClick={() => scrollTo('projects')}
                   className="px-6 py-3 bg-gradient-to-r from-blue-500 to-teal-400 hover:from-blue-600 hover:to-teal-500 text-white font-semibold rounded-xl transition-all shadow-lg shadow-blue-500/25 flex items-center group"
                 >
                   View My Work
                   <ChevronRight size={18} className="ml-1 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <button 
+                <button
                   onClick={() => scrollTo('contact')}
                   className="px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold rounded-xl transition-all flex items-center"
                 >
@@ -317,7 +318,7 @@ export default function App() {
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -331,8 +332,8 @@ export default function App() {
                   <div className="relative mb-4">
                     <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-gradient-to-br from-blue-500/20 to-teal-400/20 border-4 border-white/10 flex items-center justify-center overflow-hidden">
                       {/* Profile image with fallback */}
-                      <img 
-                        src="/profile-placeholder.jpg" 
+                      <img
+                        src="/profile-placeholder.jpg"
                         alt="Abhijith Pratheesh"
                         className="w-full h-full object-cover"
                         onError={(e) => {
@@ -353,7 +354,7 @@ export default function App() {
                     {/* Status indicator */}
                     <div className="absolute bottom-2 right-2 w-4 h-4 bg-green-500 rounded-full border-2 border-slate-800 animate-pulse"></div>
                   </div>
-                  
+
                   <h3 className="text-xl font-bold text-white mb-2">Abhijith Pratheesh</h3>
                   <p className="text-sm text-slate-400 mb-4">Full-Stack Developer & CS Student</p>
                   <div className="flex gap-2">
@@ -361,7 +362,7 @@ export default function App() {
                     <span className="px-2 py-1 bg-white/5 text-xs text-slate-300 rounded-md">Python</span>
                     <span className="px-2 py-1 bg-white/5 text-xs text-slate-300 rounded-md">AI/ML</span>
                   </div>
-                  
+
                   {/* Upload/Change Picture Button */}
                   {/* <div className="mt-4 text-center">
                     <button className="px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white text-xs font-medium rounded-lg transition-all flex items-center mx-auto">
@@ -383,7 +384,7 @@ export default function App() {
         {/* About & Summary Section */}
         <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-16">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -393,39 +394,39 @@ export default function App() {
                 <div className="h-0.5 w-10 bg-blue-500"></div>
                 <span className="text-sm text-blue-400 font-bold uppercase tracking-wider">About Me</span>
               </div>
-               <h2 className="text-3xl font-bold text-white">Engineering The Future.</h2>
-               
-               {/* Small Profile Picture in About Section */}
-               <div className="flex items-center space-x-4 bg-white/5 border border-white/10 rounded-2xl p-4">
-                 <div className="relative">
-                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500/20 to-teal-400/20 border-2 border-white/10 overflow-hidden">
-                     <img 
-                       src="/profile-placeholder.jpg" 
-                       alt="Abhijith Pratheesh"
-                       className="w-full h-full object-cover"
-                       onError={(e) => {
-                         const target = e.target as HTMLImageElement;
-                         target.style.display = 'none';
-                         const fallback = target.parentElement?.querySelector('.about-profile-fallback');
-                         if (fallback) fallback.classList.remove('hidden');
-                       }}
-                     />
-                     <div className="about-profile-fallback hidden w-full h-full flex items-center justify-center bg-slate-800/50">
-                       <div className="text-center">
-                         <div className="text-lg font-bold text-white">AP</div>
-                       </div>
-                     </div>
-                   </div>
-                   <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border border-slate-800"></div>
-                 </div>
-                 <div>
-                   <h3 className="font-bold text-white">Abhijith Pratheesh</h3>
-                   <p className="text-sm text-slate-400">B.Tech Computer Science</p>
-                   <p className="text-xs text-slate-500">Graduating 2026</p>
-                 </div>
-               </div>
-               
-               <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-4">
+              <h2 className="text-3xl font-bold text-white">Engineering The Future.</h2>
+
+              {/* Small Profile Picture in About Section */}
+              <div className="flex items-center space-x-4 bg-white/5 border border-white/10 rounded-2xl p-4">
+                <div className="relative">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500/20 to-teal-400/20 border-2 border-white/10 overflow-hidden">
+                    <img
+                      src="/profile-placeholder.jpg"
+                      alt="Abhijith Pratheesh"
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        const fallback = target.parentElement?.querySelector('.about-profile-fallback');
+                        if (fallback) fallback.classList.remove('hidden');
+                      }}
+                    />
+                    <div className="about-profile-fallback hidden w-full h-full flex items-center justify-center bg-slate-800/50">
+                      <div className="text-center">
+                        <div className="text-lg font-bold text-white">AP</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border border-slate-800"></div>
+                </div>
+                <div>
+                  <h3 className="font-bold text-white">Abhijith Pratheesh</h3>
+                  <p className="text-sm text-slate-400">B.Tech Computer Science</p>
+                  <p className="text-xs text-slate-500">Graduating 2026</p>
+                </div>
+              </div>
+
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-4">
                 <div className="flex items-center text-slate-300">
                   <GraduationCap className="mr-3 text-teal-400" size={20} />
                   <div>
@@ -443,7 +444,7 @@ export default function App() {
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -514,7 +515,7 @@ export default function App() {
 
           <div className="max-w-3xl mx-auto space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px before:h-full before:w-0.5 before:bg-gradient-to-b before:from-blue-500 before:to-transparent">
             {experiences.map((exp, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -660,7 +661,7 @@ export default function App() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 max-w-5xl mx-auto">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -703,7 +704,7 @@ export default function App() {
                 </div>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -752,6 +753,7 @@ export default function App() {
           </div>
         </div>
       </footer>
+    </div>
     </div>
   );
 }
