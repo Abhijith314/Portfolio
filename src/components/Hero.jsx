@@ -90,32 +90,24 @@ const Hero = ({ scrollTo }) => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="lg:col-span-5 flex justify-center items-center"
         >
-          <div className="relative w-72 h-72 sm:w-80 sm:h-80 group">
+          <div className="relative w-92 h-92 sm:w-90 sm:h-90 group">
             <div className="absolute inset-0 bg-linear-to-r from-blue-500 to-teal-400 rounded-3xl rotate-6 blur-lg opacity-40 group-hover:rotate-12 group-hover:scale-105 transition-all duration-500"></div>
             <div className="absolute inset-0 bg-linear-to-r from-purple-500 to-pink-500 rounded-3xl -rotate-6 blur-lg opacity-20 group-hover:-rotate-12 transition-all duration-500"></div>
             <div className="relative w-full h-full bg-slate-800 rounded-3xl border border-white/10 flex flex-col justify-center items-center p-6 text-center backdrop-blur-3xl">
               {/* Profile Picture - Fixed hidden/flex conflict */}
               <div className="relative mb-4">
-                <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-linear-to-br from-blue-500/20 to-teal-400/20 border-4 border-white/10 flex items-center justify-center overflow-hidden">
+                <div className="w-52 h-52 sm:w-56 sm:h-56 rounded-full bg-linear-to-br from-blue-500/20 to-teal-400/20 border-4 border-white/10 flex items-center justify-center overflow-hidden">
                   {/* {imgError ? ( */}
                     <div className="w-full h-full flex items-center justify-center bg-slate-800/50">
                       <div className="text-center">
                         <img
-                          src="../assets/profile-placeholder.jpg"
+                          src="/profile-picture.jpg"
                           alt="Abhijith Pratheesh"
                         />
                         {/* <div className="text-4xl font-bold text-white mb-1">AP</div>
                         <div className="text-xs text-slate-400">Profile Picture</div> */}
                       </div>
                     </div>
-                  
-                    {/* <img
-                      src="../assets/profile-placeholder.jpg"
-                      alt="Abhijith Pratheesh"
-                      className="w-full h-full object-cover"
-                      // onError={() => setImgError(true)}
-                    /> */}
-                  {/* )} */}
                 </div>
                 <div className="absolute bottom-2 right-2 w-4 h-4 bg-green-500 rounded-full border-2 border-slate-800 animate-pulse"></div>
               </div>

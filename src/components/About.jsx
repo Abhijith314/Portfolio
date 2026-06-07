@@ -40,7 +40,7 @@ const About = () => {
                   </div>
                 ) : (
                   <img
-                    src="/profile-placeholder.jpg"
+                    src="/profile-picture.jpg"
                     alt="Abhijith Pratheesh"
                     className="w-full h-full object-cover"
                     onError={() => setImgError(true)}
