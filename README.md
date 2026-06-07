@@ -1,106 +1,16 @@
-# Abhijith Pratheesh - Portfolio Website
+# React + Vite
 
-A modern, responsive portfolio website built with React, Vite, Tailwind CSS, and Framer Motion.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## 🚀 Features
+Currently, two official plugins are available:
 
-- **Modern Design**: Clean, professional design with gradient accents
-- **Responsive Layout**: Fully responsive across all device sizes
-- **Smooth Animations**: Framer Motion for smooth transitions and animations
-- **Interactive Elements**: Hover effects, scroll animations, and interactive components
-- **Profile Picture Support**: Easy to replace profile picture
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## 📁 Project Structure
+## React Compiler
 
-```
-/
-├── public/
-│   ├── profile-placeholder.jpg    # Generated profile picture (replace with your own)
-│   └── favicon.ico
-├── src/
-│   ├── App.tsx                    # Main application component
-│   ├── index.css                  # Global styles
-│   └── main.tsx                   # Application entry point
-├── index.html                     # HTML template
-├── package.json                   # Dependencies
-└── vite.config.ts                 # Vite configuration
-```
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## 🛠️ How to Replace Profile Picture
+## Expanding the ESLint configuration
 
-1. **Replace the placeholder image**:
-   - Navigate to the `public/` directory
-   - Replace `profile-placeholder.jpg` with your own profile picture
-   - Make sure the image is named exactly `profile-placeholder.jpg`
-   - Recommended size: 400x400 pixels (square format works best)
-
-2. **Alternative method** (if you want to use a different filename):
-   - Open `src/App.tsx`
-   - Find the image source URLs (lines with `src="/profile-placeholder.jpg"`)
-   - Replace `/profile-placeholder.jpg` with your image path
-   - There are two instances: one in the hero section and one in the about section
-
-## 🚀 Getting Started
-
-### Installation
-```bash
-npm install
-```
-
-### Development
-```bash
-npm run dev
-```
-
-### Build for Production
-```bash
-npm run build
-```
-
-### Preview Production Build
-```bash
-npm run preview
-```
-
-## 🎨 Customization
-
-### Colors
-The color scheme uses Tailwind CSS classes. You can modify:
-- Primary colors in gradient backgrounds
-- Text colors in the `index.css` file
-- Accent colors throughout the components
-
-### Content
-Update the following in `src/App.tsx`:
-- `personalInfo` object for contact details
-- `skills` array for technical skills
-- `experiences` array for work experience
-- `projects` array for project portfolio
-- `education` array for educational background
-
-## 📱 Responsive Breakpoints
-
-- Mobile: < 640px
-- Tablet: 640px - 1024px
-- Desktop: > 1024px
-
-## 🧰 Technologies Used
-
-- **React 18** - UI library
-- **Vite** - Build tool and development server
-- **Tailwind CSS** - Utility-first CSS framework
-- **Framer Motion** - Animation library
-- **Lucide React** - Icon library
-- **TypeScript** - Type safety
-
-## 📄 License
-
-MIT License - feel free to use this portfolio template for your own projects!
-
-## 🤝 Contact
-
-- **Name**: Abhijith Pratheesh
-- **Email**: abhijithpratheesh3014@gmail.com
-- **Phone**: +91 8848385318
-- **Location**: Kochi, Kerala, India
-- **LinkedIn**: linkedin.com/in/abhijithpratheesh
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

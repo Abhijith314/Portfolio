@@ -1,25 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Renderer, Camera, Geometry, Program, Mesh } from 'ogl';
 
-interface ParticlesProps {
-  particleCount?: number;
-  particleSpread?: number;
-  speed?: number;
-  particleColors?: string[];
-  moveParticlesOnHover?: boolean;
-  particleHoverFactor?: number;
-  alphaParticles?: boolean;
-  particleBaseSize?: number;
-  sizeRandomness?: number;
-  cameraDistance?: number;
-  disableRotation?: boolean;
-  pixelRatio?: number;
-  className?: string;
-}
+const defaultColors = ['#ffffff', '#ffffff', '#ffffff'];
 
-const defaultColors: string[] = ['#ffffff', '#ffffff', '#ffffff'];
-
-const hexToRgb = (hex: string): [number, number, number] => {
+const hexToRgb = hex => {
   hex = hex.replace(/^#/, '');
   if (hex.length === 3) {
     hex = hex
@@ -64,12 +48,13 @@ const vertex = /* glsl */ `
     mPos.z += sin(t * random.w + 6.28 * random.y) * mix(0.1, 1.5, random.z);
     
     vec4 mvPos = viewMatrix * mPos;
+
     if (uSizeRandomness == 0.0) {
       gl_PointSize = uBaseSize;
     } else {
       gl_PointSize = (uBaseSize * (1.0 + uSizeRandomness * (random.x - 0.5))) / length(mvPos.xyz);
     }
-    
+
     gl_Position = projectionMatrix * mvPos;
   }
 `;
@@ -98,7 +83,7 @@ const fragment = /* glsl */ `
   }
 `;
 
-const Particles: React.FC<ParticlesProps> = ({
+const Particles = ({
   particleCount = 200,
   particleSpread = 10,
   speed = 0.1,
@@ -113,8 +98,8 @@ const Particles: React.FC<ParticlesProps> = ({
   pixelRatio = 1,
   className
 }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const mouseRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+  const containerRef = useRef(null);
+  const mouseRef = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
     const container = containerRef.current;
@@ -141,7 +126,7 @@ const Particles: React.FC<ParticlesProps> = ({
     window.addEventListener('resize', resize, false);
     resize();
 
-    const handleMouseMove = (e: MouseEvent) => {
+    const handleMouseMove = e => {
       const rect = container.getBoundingClientRect();
       const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
       const y = -(((e.clientY - rect.top) / rect.height) * 2 - 1);
@@ -149,7 +134,7 @@ const Particles: React.FC<ParticlesProps> = ({
     };
 
     if (moveParticlesOnHover) {
-      container.addEventListener('mousemove', handleMouseMove);
+      window.addEventListener('mousemove', handleMouseMove); // Changed to window so it moves even when scrolling
     }
 
     const count = particleCount;
@@ -159,7 +144,7 @@ const Particles: React.FC<ParticlesProps> = ({
     const palette = particleColors && particleColors.length > 0 ? particleColors : defaultColors;
 
     for (let i = 0; i < count; i++) {
-      let x: number, y: number, z: number, len: number;
+      let x, y, z, len;
       do {
         x = Math.random() * 2 - 1;
         y = Math.random() * 2 - 1;
@@ -195,11 +180,11 @@ const Particles: React.FC<ParticlesProps> = ({
 
     const particles = new Mesh(gl, { mode: gl.POINTS, geometry, program });
 
-    let animationFrameId: number;
+    let animationFrameId;
     let lastTime = performance.now();
     let elapsed = 0;
 
-    const update = (t: number) => {
+    const update = t => {
       animationFrameId = requestAnimationFrame(update);
       const delta = t - lastTime;
       lastTime = t;
@@ -208,8 +193,8 @@ const Particles: React.FC<ParticlesProps> = ({
       program.uniforms.uTime.value = elapsed * 0.001;
 
       if (moveParticlesOnHover) {
-        particles.position.x = -mouseRef.current.x * particleHoverFactor;
-        particles.position.y = -mouseRef.current.y * particleHoverFactor;
+        particles.position.x += (-mouseRef.current.x * particleHoverFactor - particles.position.x) * 0.1; // Smoothed movement
+        particles.position.y += (-mouseRef.current.y * particleHoverFactor - particles.position.y) * 0.1;
       } else {
         particles.position.x = 0;
         particles.position.y = 0;
@@ -229,7 +214,7 @@ const Particles: React.FC<ParticlesProps> = ({
     return () => {
       window.removeEventListener('resize', resize);
       if (moveParticlesOnHover) {
-        container.removeEventListener('mousemove', handleMouseMove);
+        window.removeEventListener('mousemove', handleMouseMove);
       }
       cancelAnimationFrame(animationFrameId);
       if (container.contains(gl.canvas)) {
