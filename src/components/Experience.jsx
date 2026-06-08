@@ -28,7 +28,7 @@ const Experience = () => (
           <div className="absolute left-0 mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 border-2 border-blue-500 text-teal-400 shadow-xl shadow-blue-500/20">
             <Briefcase size={18} />
           </div>
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-white/20 overflow-hidden transition-all hover:shadow-xl hover:shadow-blue-500/5 h-full">
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-lg hover:border-white/20 overflow-hidden transition-all hover:shadow-xl hover:shadow-blue-500/5 h-full">
           {/*bg-[#0f1626] border border-white/5 rounded-2xl flex flex-col overflow-hidden group hover:border-white/20 transition-all hover:shadow-xl hover:shadow-blue-500/5 h-full */}
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
               <div>

@@ -21,7 +21,7 @@ const Certifications = () => (
         <h2 className="text-3xl font-bold text-white mb-6">
           Certifications & Workshops
         </h2>
-        <div className="bg-white/5 border border-white/10 rounded-2xl p-6 divide-y divide-white/5">
+        <div className="bg-white/5 border border-white/10 rounded-2xl p-6 divide-y divide-white/5 backdrop-blur-lg">
           {certifications.map((cert, index) => (
             <div
               key={index}
@@ -55,7 +55,7 @@ const Certifications = () => (
         <h2 className="text-3xl font-bold text-white mb-6">
           Extracurricular & Volunteering
         </h2>
-        <div className="bg-white/5 border border-white/10 rounded-2xl p-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="bg-white/5 border border-white/10 backdrop-blur-lg rounded-2xl p-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
           {involvements.map((item, index) => (
             <div
               key={index}
