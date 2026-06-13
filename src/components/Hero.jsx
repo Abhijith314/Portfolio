@@ -34,9 +34,9 @@ const Hero = ({ scrollTo }) => {
             {personalInfo.title}
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl leading-relaxed">
-            Turning complex problems into elegant, real-world solutions. B.Tech
-            Computer Science student with a focus on Frontend Engineering, Python,
-            and AI integration.
+            Turning complex problems into elegant, real-world solutions. 
+            {/* B.Tech Computer Science student with a focus on Frontend Engineering, Python,
+            and AI integration. */}
           </p>
 
           <div className="flex flex-wrap gap-4 pt-4">
@@ -116,7 +116,7 @@ const Hero = ({ scrollTo }) => {
                 Abhijith Pratheesh
               </h3>
               <p className="text-sm text-slate-400 mb-4">
-                Full-Stack Developer & CS Student
+                 Full-Stack Developer & BTech CS Graduate
               </p>
               <div className="flex gap-2">
                 <span className="px-2 py-1 bg-white/5 text-xs text-slate-300 rounded-md">

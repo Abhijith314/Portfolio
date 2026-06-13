@@ -1,6 +1,6 @@
 export const personalInfo = {
   name: "Abhijith Pratheesh",
-  title: "Full-Stack Developer & B.Tech CS Student",
+  title: "Aspiring Full-Stack Developer & B.Tech CS Graduate",
   location: "Kochi, Kerala, India",
   phone: "+91 8848385318",
   email: "abhijithpratheesh3014@gmail.com",
