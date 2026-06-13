@@ -21,7 +21,8 @@ const Hero = ({ scrollTo }) => {
           className="lg:col-span-7 space-y-6"
         >
           <div className="inline-flex items-center px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-sm font-medium">
-            <span className="animate-pulse w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+            <span className="animate-pulse w-2 h-2 bg-blue-400 rounded-full mr-2">
+            </span>
             Available for Graduate Trainee Roles
           </div>
           <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight">
@@ -34,9 +35,11 @@ const Hero = ({ scrollTo }) => {
             {personalInfo.title}
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl leading-relaxed">
-            Turning complex problems into elegant, real-world solutions. 
-            {/* B.Tech Computer Science student with a focus on Frontend Engineering, Python,
-            and AI integration. */}
+            Turning complex problems into elegant, real-world solutions.
+            {
+              /* B.Tech Computer Science student with a focus on Frontend Engineering, Python,
+            and AI integration. */
+            }
           </p>
 
           <div className="flex flex-wrap gap-4 pt-4">
@@ -90,33 +93,58 @@ const Hero = ({ scrollTo }) => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="lg:col-span-5 flex justify-center items-center"
         >
-          <div className="relative w-92 h-92 sm:w-90 sm:h-90 group">
-            <div className="absolute inset-0 bg-linear-to-r from-blue-500 to-teal-400 rounded-3xl rotate-6 blur-lg opacity-40 group-hover:rotate-12 group-hover:scale-105 transition-all duration-500"></div>
-            <div className="absolute inset-0 bg-linear-to-r from-purple-500 to-pink-500 rounded-3xl -rotate-6 blur-lg opacity-20 group-hover:-rotate-12 transition-all duration-500"></div>
+          {/* Removed the 'group' class from here since we no longer rely on hover */}
+          <div className="relative w-92 h-92 sm:w-90 sm:h-90">
+            {/* Automated Glow 1 */}
+            <motion.div
+              className="absolute inset-0 bg-linear-to-r from-blue-500 to-teal-400 rounded-3xl blur-lg opacity-40"
+              animate={{
+                rotate: [6, 12, 6],
+                scale: [1, 1.05, 1],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+
+            {/* Automated Glow 2 */}
+            <motion.div
+              className="absolute inset-0 bg-linear-to-r from-purple-500 to-pink-500 rounded-3xl blur-lg opacity-20"
+              animate={{
+                rotate: [-6, -12, -6],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0.5, // Slight delay so the two glows offset nicely
+              }}
+            />
+
             <div className="relative w-full h-full bg-slate-800 rounded-3xl border border-white/10 flex flex-col justify-center items-center p-6 text-center backdrop-blur-3xl">
-              {/* Profile Picture - Fixed hidden/flex conflict */}
+              {/* Profile Picture */}
               <div className="relative mb-4">
                 <div className="w-52 h-52 sm:w-56 sm:h-56 rounded-full bg-linear-to-br from-blue-500/20 to-teal-400/20 border-4 border-white/10 flex items-center justify-center overflow-hidden">
-                  {/* {imgError ? ( */}
-                    <div className="w-full h-full flex items-center justify-center bg-slate-800/50">
-                      <div className="text-center">
-                        <img
-                          src="/profile-picture.jpg"
-                          alt="Abhijith Pratheesh"
-                        />
-                        {/* <div className="text-4xl font-bold text-white mb-1">AP</div>
-                        <div className="text-xs text-slate-400">Profile Picture</div> */}
-                      </div>
+                  <div className="w-full h-full flex items-center justify-center bg-slate-800/50">
+                    <div className="text-center">
+                      <img
+                        src="/profile-picture.jpg"
+                        alt="Abhijith Pratheesh"
+                      />
                     </div>
+                  </div>
                 </div>
-                <div className="absolute bottom-2 right-2 w-4 h-4 bg-green-500 rounded-full border-2 border-slate-800 animate-pulse"></div>
+                <div className="absolute bottom-2 right-2 w-4 h-4 bg-green-500 rounded-full border-2 border-slate-800 animate-pulse">
+                </div>
               </div>
 
               <h3 className="text-xl font-bold text-white mb-2">
                 Abhijith Pratheesh
               </h3>
               <p className="text-sm text-slate-400 mb-4">
-                 Full-Stack Developer & BTech CS Graduate
+                Full-Stack Developer & BTech CS Graduate
               </p>
               <div className="flex gap-2">
                 <span className="px-2 py-1 bg-white/5 text-xs text-slate-300 rounded-md">
