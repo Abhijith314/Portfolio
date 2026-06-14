@@ -14,7 +14,8 @@ export const skills = [
   { category: "Programming Languages", items: ["C", "Python", "Java (Basics)"] },
   { category: "Web Technologies", items: ["HTML", "CSS", "React", "Angular", "Flask"] },
   { category: "Databases & Cloud", items: ["SQL", "MySQL", "Supabase (PostgreSQL)"] },
-  { category: "Core Computer Science", items: ["Data Structures & Algorithms", "OOP (C++/Java/Python)", "Problem Solving"] },
+  // { category: "Core Computer Science", items: ["Data Structures & Algorithms", "OOP (C++/Java/Python)", "Problem Solving"] },
+  { category: "Core Computer Science", items: ["Data Structures & Algorithms", "OOP (Java/Python)", "Problem Solving"] },
   { category: "OS & Tools", items: ["Linux", "Git", "GitHub", "Vite"] },
   { category: "Emerging Fields", items: ["AI/ML Basics", "Data Analytics", "Computer Vision (OpenCV)", "Gemini API"] },
 ];
@@ -42,6 +43,15 @@ export const experiences = [
 
 export const projects = [
   {
+    title: "Automated Smart Shopping Cart",
+    subtitle: "IoT Software with Computer Vision",
+    technologies: ["Python", "OpenCV", "Pyzbar", "Supabase"],
+    type: "Software/Hardware Project",
+    description:
+      "Built IoT software solution with real-time barcode scanning and automated billing using Python, OpenCV and Supabase PostgreSQL.",
+    link: "https://github.com/Abhijith314/Automated-Smart-Shopping-Cart",
+  },
+  {
     title: "GaavSvaasthy",
     subtitle: "AI-Powered Rural Healthcare Platform",
     technologies: ["React", "Flask", "Supabase", "ML"],
@@ -49,15 +59,6 @@ export const projects = [
     description:
       "Developed full-stack healthcare web application serving rural communities with AI-driven disease prediction. Architected React frontend with Flask backend handling AI prediction engine.",
     link: "https://github.com/Abhijith314/GaavSvaasthy",
-  },
-  {
-    title: "Smart Shopping Cart Web App",
-    subtitle: "IoT Retail Solution Dashboard",
-    technologies: ["React", "Vite", "Tailwind CSS", "Supabase"],
-    type: "Personal Project",
-    description:
-      "Developed a web-based dashboard for an automated smart shopping cart system to provide users with a real-time digital interface for purchases and live billing.",
-    link: "https://github.com/Abhijith314/smart-cart-web-app",
   },
   {
     title: "Campus Management System",
@@ -69,13 +70,13 @@ export const projects = [
     link: "https://github.com/Abhijith314/campus-management-system",
   },
   {
-    title: "Automated Smart Shopping Cart",
-    subtitle: "IoT Software with Computer Vision",
-    technologies: ["Python", "OpenCV", "Pyzbar", "Supabase"],
-    type: "Software/Hardware Project",
+    title: "Smart Shopping Cart Web App",
+    subtitle: "IoT Retail Solution Dashboard",
+    technologies: ["React", "Vite", "Tailwind CSS", "Supabase"],
+    type: "Personal Project",
     description:
-      "Built IoT software solution with real-time barcode scanning and automated billing using Python, OpenCV and Supabase PostgreSQL.",
-    link: "https://github.com/Abhijith314/Automated-Smart-Shopping-Cart",
+      "Developed a web-based dashboard for an automated smart shopping cart system to provide users with a real-time digital interface for purchases and live billing.",
+    link: "https://github.com/Abhijith314/smart-cart-web-app",
   },
   {
     title: "E-Commerce Website Frontend",
